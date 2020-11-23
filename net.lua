@@ -56,7 +56,7 @@ end
 -- ) -> nil
 net.send_message = function(port, destination_port, message, ...)
     local response = net.open_connection(port)
-    local close_after_send = {...}
+    local close_after_send = {...} or false
 
     if (response == nil) then
         print("Couldn't send message")
